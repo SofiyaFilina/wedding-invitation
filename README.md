@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Осенняя свадьба | Анна & Иван</title>
+    <title>Осенняя свадьба | София & Михаил</title>
     <!-- Подключение шрифтов Google Fonts для красивого оформления -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -354,7 +354,7 @@
         <div class="subtitle">Приглашение</div>
 
         <!-- Имена -->
-        <div class="names">Анна &amp; Иван</div>
+        <div class="names">София &amp; Михаил</div>
 
         <!-- Основной текст -->
         <div class="content">
@@ -370,17 +370,17 @@
             <div class="detail-item">
                 <span class="icon">📅</span>
                 <div class="label">Дата</div>
-                <div class="value">15 октября 2026</div>
+                <div class="value">19 сентября 2026</div>
             </div>
             <div class="detail-item">
                 <span class="icon">⏰</span>
                 <div class="label">Время</div>
-                <div class="value">16:00</div>
+                <div class="value">17:00</div>
             </div>
             <div class="detail-item">
                 <span class="icon">📍</span>
                 <div class="label">Место</div>
-                <div class="value">Усадьба "Осенний Парк"</div>
+                <div class="value">Ресторан Малевка</div>
             </div>
         </div>
 
@@ -394,7 +394,7 @@
         <!-- Дополнительная информация -->
         <div class="footer-note">
             <span>✦</span> С нетерпением ждём встречи с вами! <span>✦</span><br>
-            Пожалуйста, подтвердите ваше участие до 1 октября.
+            Пожалуйста, подтвердите ваше участие до 1 сентября.
         </div>
 
         <!-- Нижний орнамент -->
