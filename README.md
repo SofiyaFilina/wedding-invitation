@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Осенняя свадьба | София & Михаил</title>
-    <!-- Подключение шрифтов Google Fonts для красивого оформления -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* ===== БАЗОВЫЕ СБРОСЫ И НАСТРОЙКИ ===== */
+        /* ===== БАЗОВЫЕ СБРОСЫ ===== */
         * {
             margin: 0;
             padding: 0;
@@ -16,7 +15,7 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #1a0f0a; /* Тёмный фон с лёгким коричневым оттенком */
+            background: #1a0f0a;
             color: #f4e8d8;
             min-height: 100vh;
             display: flex;
@@ -29,93 +28,43 @@
 
         /* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
         .invitation {
-            max-width: 900px;
+            max-width: 950px;
             width: 100%;
-            background: rgba(26, 15, 10, 0.85);
+            background: rgba(26, 15, 10, 0.92);
             border-radius: 30px;
-            padding: 40px 30px;
+            padding: 40px 35px;
             position: relative;
             backdrop-filter: blur(3px);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
             border: 1px solid rgba(255, 140, 0, 0.15);
             z-index: 2;
-            transition: all 0.3s ease;
+            margin: 20px 0;
         }
 
-        /* ===== АКВАРЕЛЬНЫЕ ЛИСТЬЯ (ФОН) ===== */
-        /* ИНСТРУКЦИЯ: Вставьте изображения листьев в PNG с прозрачным фоном.
-           Рекомендуемый размер: 400-800px по ширине.
-           Можно скачать готовые наборы на Freepik или использовать SVG-листья.
-           Ниже я использовал CSS-градиенты для имитации, но ЗАМЕНИТЕ НА РЕАЛЬНЫЕ ИЗОБРАЖЕНИЯ. */
-        
+        /* ===== ЛИСТЬЯ (фон) ===== */
+        /* ИНСТРУКЦИЯ: Замените URL на ваши PNG-изображения акварельных листьев
+           Рекомендуемый размер: 600x600px, прозрачный фон */
         .leaf {
             position: fixed;
-            opacity: 0.25;
+            opacity: 0.2;
             pointer-events: none;
             z-index: 1;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
         }
+        .leaf-1 { width: 250px; height: 250px; top: 5%; left: -50px; background-image: url('leaf1.png'); transform: rotate(-20deg); }
+        .leaf-2 { width: 300px; height: 300px; bottom: 0%; right: -80px; background-image: url('leaf2.png'); transform: rotate(30deg); }
+        .leaf-3 { width: 180px; height: 180px; top: 50%; left: 60%; background-image: url('leaf3.png'); transform: rotate(80deg); }
+        .leaf-4 { width: 200px; height: 200px; top: 10%; right: 5%; background-image: url('leaf4.png'); transform: rotate(-45deg); }
+        .leaf-5 { width: 150px; height: 150px; bottom: 20%; left: 10%; background-image: url('leaf5.png'); transform: rotate(15deg); }
 
-        /* ИНСТРУКЦИЯ ПО КАРТИНКАМ:
-           Замените URL в background-image на ссылку на вашу картинку.
-           Все листья должны быть в формате PNG с прозрачностью.
-           Рекомендуемый размер: 600x600px для лучшего качества.
-           Используйте оранжевые, жёлтые и красные оттенки.
-        */
-        .leaf-1 {
-            width: 250px;
-            height: 250px;
-            top: 5%;
-            left: -50px;
-            background-image: url('https://via.placeholder.com/600x600/FF8C00/FF8C00?text=Leaf1'); /* ЗАМЕНИТЕ НА СВОЮ КАРТИНКУ */
-            transform: rotate(-20deg);
-            opacity: 0.2;
-        }
-        .leaf-2 {
-            width: 300px;
-            height: 300px;
-            bottom: 0%;
-            right: -80px;
-            background-image: url('https://via.placeholder.com/600x600/FFA500/FFA500?text=Leaf2'); /* ЗАМЕНИТЕ НА СВОЮ КАРТИНКУ */
-            transform: rotate(30deg);
-            opacity: 0.15;
-        }
-        .leaf-3 {
-            width: 180px;
-            height: 180px;
-            top: 50%;
-            left: 60%;
-            background-image: url('https://via.placeholder.com/600x600/D2691E/D2691E?text=Leaf3'); /* ЗАМЕНИТЕ НА СВОЮ КАРТИНКУ */
-            transform: rotate(80deg);
-            opacity: 0.15;
-        }
-        .leaf-4 {
-            width: 200px;
-            height: 200px;
-            top: 10%;
-            right: 5%;
-            background-image: url('https://via.placeholder.com/600x600/CD853F/CD853F?text=Leaf4'); /* ЗАМЕНИТЕ НА СВОЮ КАРТИНКУ */
-            transform: rotate(-45deg);
-            opacity: 0.1;
-        }
-        .leaf-5 {
-            width: 150px;
-            height: 150px;
-            bottom: 20%;
-            left: 10%;
-            background-image: url('https://via.placeholder.com/600x600/FF7F50/FF7F50?text=Leaf5'); /* ЗАМЕНИТЕ НА СВОЮ КАРТИНКУ */
-            transform: rotate(15deg);
-            opacity: 0.2;
-        }
-
-        /* ===== ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ===== */
+        /* ===== ДЕКОР ===== */
         .ornament {
             text-align: center;
             font-size: 28px;
             color: #d4852b;
-            margin: 15px 0;
+            margin: 10px 0 15px;
             letter-spacing: 10px;
             opacity: 0.6;
             font-family: 'Great Vibes', cursive;
@@ -128,34 +77,28 @@
             text-align: center;
             color: #f6b26b;
             text-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
-            margin-bottom: 10px;
-            line-height: 1.2;
-            letter-spacing: 2px;
-            word-wrap: break-word;
+            margin-bottom: 5px;
         }
-
         .subtitle {
             text-align: center;
-            font-family: 'Montserrat', sans-serif;
             font-weight: 300;
             font-size: 1.1rem;
             letter-spacing: 6px;
             text-transform: uppercase;
             color: #d4852b;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             opacity: 0.8;
         }
-
         .names {
             font-family: 'Great Vibes', cursive;
             font-size: 3.2rem;
             text-align: center;
             color: #f6b26b;
-            margin: 20px 0 10px;
+            margin: 10px 0 15px;
             text-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
         }
 
-        /* ===== ОСНОВНОЙ ТЕКСТ ===== */
+        /* ===== ТЕКСТ ===== */
         .content {
             text-align: center;
             font-weight: 300;
@@ -163,70 +106,184 @@
             line-height: 1.8;
             color: #e8d5c4;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
             padding: 0 10px;
         }
-
         .content strong {
             color: #f6b26b;
             font-weight: 600;
         }
 
-        /* ===== ДЕТАЛИ МЕРОПРИЯТИЯ ===== */
+        /* ===== ТАЙМЕР ===== */
+        .timer-wrap {
+            text-align: center;
+            margin: 30px 0;
+            padding: 25px 15px;
+            background: rgba(255, 140, 0, 0.05);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 140, 0, 0.1);
+        }
+        .timer-wrap .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #d4852b;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .timer-item {
+            background: rgba(26, 15, 10, 0.6);
+            padding: 15px 20px;
+            border-radius: 15px;
+            min-width: 80px;
+            border: 1px solid rgba(255, 140, 0, 0.15);
+        }
+        .timer-item .number {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #f6b26b;
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .timer-item .text {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b89880;
+        }
+
+        /* ===== ДЕТАЛИ ===== */
         .details {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            margin: 35px 0;
-            padding: 0 10px;
+            gap: 20px;
+            margin: 30px 0;
         }
-
         .detail-item {
             background: rgba(255, 140, 0, 0.05);
             border: 1px solid rgba(255, 140, 0, 0.15);
             border-radius: 20px;
-            padding: 20px 30px;
-            min-width: 180px;
-            flex: 1 1 160px;
+            padding: 18px 25px;
+            min-width: 160px;
+            flex: 1 1 140px;
             transition: all 0.3s ease;
-            backdrop-filter: blur(3px);
+            text-align: center;
         }
-
         .detail-item:hover {
             background: rgba(255, 140, 0, 0.10);
             border-color: rgba(255, 140, 0, 0.3);
             transform: translateY(-3px);
         }
-
-        .detail-item .icon {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 10px;
+        .detail-item .icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+        .detail-item .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #d4852b; }
+        .detail-item .value { font-size: 1rem; color: #f4e8d8; margin-top: 5px; }
+        .detail-item .value a {
+            color: #f6b26b;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(255, 140, 0, 0.3);
         }
-        .detail-item .label {
+        .detail-item .value a:hover {
+            border-bottom: 1px solid #d4852b;
+        }
+
+        /* ===== КАРТА ===== */
+        .map-wrap {
+            margin: 25px 0 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 140, 0, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        .map-wrap iframe {
+            width: 100%;
+            height: 350px;
+            display: block;
+            border: 0;
+        }
+
+        /* ===== RSVP ФОРМА ===== */
+        .rsvp-wrap {
+            background: rgba(255, 140, 0, 0.05);
+            border: 1px solid rgba(255, 140, 0, 0.12);
+            border-radius: 25px;
+            padding: 30px 25px;
+            margin: 30px 0 20px;
+        }
+        .rsvp-wrap h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: #f6b26b;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .rsvp-wrap .sub {
+            text-align: center;
+            color: #b89880;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #d4852b;
+            margin-bottom: 5px;
             font-weight: 300;
         }
-        .detail-item .value {
-            font-size: 1.05rem;
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(26, 15, 10, 0.7);
+            border: 1px solid rgba(255, 140, 0, 0.2);
+            border-radius: 12px;
             color: #f4e8d8;
-            font-weight: 400;
-            margin-top: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            outline: none;
         }
-
-        /* ===== КНОПКА ===== */
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #d4852b;
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-group select option {
+            background: #1a0f0a;
+            color: #f4e8d8;
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .form-row .form-group {
+            flex: 1 1 200px;
+        }
         .btn {
             display: inline-block;
             background: linear-gradient(145deg, #d4852b, #b86a1f);
             color: #1a0f0a;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            text-decoration: none;
-            padding: 16px 50px;
+            padding: 14px 40px;
             border-radius: 50px;
             font-size: 1rem;
             letter-spacing: 2px;
@@ -235,137 +292,113 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 8px 25px rgba(212, 133, 43, 0.3);
-            margin: 10px 0 20px;
+            width: 100%;
         }
-
         .btn:hover {
             background: linear-gradient(145deg, #e8993a, #c97a26);
-            transform: scale(1.03);
+            transform: scale(1.02);
             box-shadow: 0 12px 35px rgba(212, 133, 43, 0.5);
         }
-
-        .btn-wrap {
-            text-align: center;
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
         }
 
-        /* ===== ДОП. ИНФОРМАЦИЯ ===== */
+        /* ===== УВЕДОМЛЕНИЕ ===== */
+        .notification {
+            display: none;
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+        .notification.success {
+            display: block;
+            background: rgba(46, 125, 50, 0.2);
+            border: 1px solid rgba(46, 125, 50, 0.3);
+            color: #a5d6a7;
+        }
+        .notification.error {
+            display: block;
+            background: rgba(211, 47, 47, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.3);
+            color: #ef9a9a;
+        }
+
+        /* ===== ФУТЕР ===== */
         .footer-note {
-            margin-top: 30px;
-            font-size: 0.85rem;
+            margin-top: 25px;
+            font-size: 0.8rem;
             color: #b89880;
             text-align: center;
-            font-weight: 300;
-            letter-spacing: 1px;
             border-top: 1px solid rgba(255, 140, 0, 0.1);
-            padding-top: 25px;
+            padding-top: 20px;
         }
+        .footer-note span { color: #d4852b; }
 
-        .footer-note span {
-            color: #d4852b;
-        }
-
-        /* ===== АДАПТИВНОСТЬ ===== */
+        /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
-            .invitation {
-                padding: 30px 18px;
-                border-radius: 20px;
-            }
-            .title {
-                font-size: 2.6rem;
-            }
-            .names {
-                font-size: 2.2rem;
-            }
-            .subtitle {
-                font-size: 0.85rem;
-                letter-spacing: 4px;
-            }
-            .content {
-                font-size: 0.95rem;
-                padding: 0 5px;
-            }
-            .details {
-                gap: 15px;
-            }
-            .detail-item {
-                padding: 15px 18px;
-                min-width: 130px;
-                flex: 1 1 120px;
-            }
-            .detail-item .value {
-                font-size: 0.9rem;
-            }
-            .btn {
-                padding: 14px 35px;
-                font-size: 0.9rem;
-            }
-            .leaf-1, .leaf-2, .leaf-3, .leaf-4, .leaf-5 {
-                opacity: 0.1;
-                transform: scale(0.7);
-            }
+            .invitation { padding: 25px 18px; }
+            .title { font-size: 2.6rem; }
+            .names { font-size: 2.2rem; }
+            .timer-item .number { font-size: 2rem; }
+            .timer-item { padding: 10px 14px; min-width: 60px; }
+            .timer { gap: 12px; }
+            .map-wrap iframe { height: 250px; }
+            .rsvp-wrap { padding: 20px 15px; }
+            .leaf-1, .leaf-2, .leaf-3, .leaf-4, .leaf-5 { opacity: 0.08; transform: scale(0.6); }
         }
-
         @media (max-width: 480px) {
-            .title {
-                font-size: 2rem;
-            }
-            .names {
-                font-size: 1.8rem;
-            }
-            .invitation {
-                padding: 20px 12px;
-            }
-            .detail-item {
-                flex: 1 1 100%;
-                min-width: auto;
-            }
-            .leaf-1, .leaf-2, .leaf-3, .leaf-4, .leaf-5 {
-                opacity: 0.05;
-                transform: scale(0.5);
-            }
+            .title { font-size: 2rem; }
+            .names { font-size: 1.8rem; }
+            .timer-item .number { font-size: 1.6rem; }
+            .form-row { flex-direction: column; gap: 0; }
+            .detail-item { flex: 1 1 100%; }
+            .leaf-1, .leaf-2, .leaf-3, .leaf-4, .leaf-5 { opacity: 0.05; transform: scale(0.4); }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ФОНОВЫЕ ЛИСТЬЯ (AKVARELE) ===== -->
-    <!-- ИНСТРУКЦИЯ ПО ЗАМЕНЕ ИЗОБРАЖЕНИЙ:
-         1. Найдите красивые PNG-изображения акварельных осенних листьев
-            (оранжевые, жёлтые, красные, с размытыми краями).
-         2. Замените URL в background-image каждого .leaf-* на ссылку на вашу картинку.
-         3. Рекомендуемый размер изображений: 600x600px, чтобы выглядело чётко на больших экранах.
-         4. Хорошие ресурсы: Freepik, Pexels, или нарисуйте сами в Canva.
-         5. Для лучшего эффекта листья должны быть с прозрачным фоном (PNG).
-    -->
+    <!-- ===== ФОНОВЫЕ ЛИСТЬЯ ===== -->
+    <!-- ИНСТРУКЦИЯ: Замените leaf1.png, leaf2.png и т.д. на ваши файлы -->
     <div class="leaf leaf-1"></div>
     <div class="leaf leaf-2"></div>
     <div class="leaf leaf-3"></div>
     <div class="leaf leaf-4"></div>
     <div class="leaf leaf-5"></div>
 
-    <!-- ===== ОСНОВНОЙ БЛОК ПРИГЛАШЕНИЯ ===== -->
+    <!-- ===== ОСНОВНОЙ БЛОК ===== -->
     <div class="invitation">
 
-        <!-- Верхний орнамент -->
         <div class="ornament">✦ ✦ ✦</div>
 
-        <!-- Заголовок -->
         <h1 class="title">Осенняя Свадьба</h1>
         <div class="subtitle">Приглашение</div>
 
-        <!-- Имена -->
         <div class="names">София &amp; Михаил</div>
 
-        <!-- Основной текст -->
         <div class="content">
             <strong>Дорогие друзья и родные!</strong><br><br>
-            Мы рады пригласить вас на самый важный день в нашей жизни — 
+            С огромной радостью приглашаем вас разделить с нами этот особенный день — 
             день, когда наши сердца соединятся в любви и верности. 
-            Пусть осенние листья кружатся в вальсе, а тёплый свет 
-            согревает этот чудесный день.
+            Пусть осенние листья кружатся в вальсе, а тёплый свет согревает этот чудесный день.
         </div>
 
-        <!-- Детали мероприятия -->
+        <!-- ===== ТАЙМЕР ===== -->
+        <div class="timer-wrap">
+            <span class="label">⏳ До нашей свадьбы осталось</span>
+            <div class="timer">
+                <div class="timer-item"><span class="number" id="days">00</span><span class="text">Дней</span></div>
+                <div class="timer-item"><span class="number" id="hours">00</span><span class="text">Часов</span></div>
+                <div class="timer-item"><span class="number" id="minutes">00</span><span class="text">Минут</span></div>
+                <div class="timer-item"><span class="number" id="seconds">00</span><span class="text">Секунд</span></div>
+            </div>
+        </div>
+
+        <!-- ===== ДЕТАЛИ ===== -->
         <div class="details">
             <div class="detail-item">
                 <span class="icon">📅</span>
@@ -375,41 +408,204 @@
             <div class="detail-item">
                 <span class="icon">⏰</span>
                 <div class="label">Время</div>
-                <div class="value">17:00</div>
+                <div class="value">16:00</div>
             </div>
             <div class="detail-item">
                 <span class="icon">📍</span>
                 <div class="label">Место</div>
-                <div class="value">Ресторан Малевка</div>
+                <div class="value">
+                    <a href="https://yandex.ru/maps/-/CDXbD9C6" target="_blank">Ресторан "Малевка"</a>
+                    <!-- ИНСТРУКЦИЯ: Замените ссылку выше на ссылку вашего места в Яндекс.Картах или Google Maps -->
+                </div>
             </div>
         </div>
 
-        <!-- Кнопка подтверждения -->
-        <div class="btn-wrap">
-            <a href="#" class="btn">Подтвердить присутствие</a>
-            <!-- ИНСТРУКЦИЯ: Замените href="#" на ссылку на форму RSVP,
-                 например: https://forms.gle/ваша_ссылка или ваш URL -->
+        <!-- ===== КАРТА ===== -->
+        <div class="map-wrap">
+            <!-- ИНСТРУКЦИЯ: Замените src на вашу карту. Как получить:
+                 1. Откройте Яндекс.Карты или Google Maps
+                 2. Найдите ваше место
+                 3. Нажмите "Поделиться" → "Встроить карту"
+                 4. Скопируйте src ссылку и вставьте ниже -->
+            <iframe 
+                src="https://yandex.ru/map-widget/v1/?ll=37.638728,54.161942&z=15&pt=37.638728,54.161942" 
+                allowfullscreen 
+                loading="lazy">
+            </iframe>
         </div>
 
-        <!-- Дополнительная информация -->
+        <!-- ===== RSVP ФОРМА ===== -->
+        <div class="rsvp-wrap">
+            <h3>Подтвердите присутствие</h3>
+            <p class="sub">Мы будем очень рады видеть вас! ❤️</p>
+
+            <form id="rsvpForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" placeholder="Например: Анжелика" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Количество гостей</label>
+                        <select id="guests">
+                            <option value="1">Я один</option>
+                            <option value="2">Я + 1 гость</option>
+                            <option value="3">Я + 2 гостя</option>
+                            <option value="4">Я + 3 гостя</option>
+                            <option value="5">Я + 4 гостя</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваши пожелания или вопросы</label>
+                    <textarea id="message" placeholder="Напишите нам что-нибудь тёплое... или задайте вопрос"></textarea>
+                </div>
+                <button type="submit" class="btn" id="submitBtn">Отправить ответ</button>
+            </form>
+
+            <div id="notification" class="notification"></div>
+        </div>
+
+        <!-- ===== ФУТЕР ===== -->
         <div class="footer-note">
             <span>✦</span> С нетерпением ждём встречи с вами! <span>✦</span><br>
             Пожалуйста, подтвердите ваше участие до 1 сентября.
         </div>
 
-        <!-- Нижний орнамент -->
         <div class="ornament" style="margin-bottom:0;">✦ ✦ ✦</div>
 
     </div>
 
-    <!-- ===== НЕБОЛЬШОЙ JS ДЛЯ ИНТЕРАКТИВА (опционально) ===== -->
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // Можно добавить плавное появление элементов или таймер до даты свадьбы
-        // Этот скрипт просто показывает, что вы можете добавить свои функции
-        console.log('Осеннее приглашение загружено! 🍂');
-        
-        // Пример: динамическое обновление года в футере (если нужно)
-        // document.querySelector('.footer-note').innerHTML += ` ${new Date().getFullYear()}`;
+        // ===== 1. ТАЙМЕР =====
+        function updateTimer() {
+            const weddingDate = new Date('September 19, 2026 16:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+
+            if (diff < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+
+        // ===== 2. RSVP ФОРМА =====
+        const form = document.getElementById('rsvpForm');
+        const notification = document.getElementById('notification');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // === ИНСТРУКЦИЯ ПО НАСТРОЙКЕ ПОЛУЧЕНИЯ ОТВЕТОВ ===
+        // Есть два простых способа:
+        //
+        // СПОСОБ 1 (простой): Получать ответы по электронной почте
+        // Раскомментируйте код ниже и замените email на свой
+        //
+        // СПОСОБ 2 (продвинутый): Использовать Google Sheets + Apps Script
+        // ИНСТРУКЦИЯ: https://github.com/jamiewilson/form-to-google-sheets
+        // 
+        // СПОСОБ 3 (самый простой): Заменить action на FormSubmit.co
+        // ИНСТРУКЦИЯ ниже в коде
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!name) {
+                notification.className = 'notification error';
+                notification.textContent = '❌ Пожалуйста, введите ваше имя!';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+
+            // === ВАРИАНТ 1: Отправка на Email через FormSubmit.co (БЕСПЛАТНО) ===
+            // 1. Зайдите на https://formsubmit.co
+            // 2. Введите ваш email
+            // 3. Скопируйте ссылку вида: https://formsubmit.co/ваш@email.com
+            // 4. Раскомментируйте код ниже и вставьте вашу ссылку
+            
+            /*
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('guests', guests);
+            formData.append('message', message);
+
+            fetch('https://formsubmit.co/ваш@email.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    notification.className = 'notification success';
+                    notification.textContent = '✅ Спасибо, ' + name + '! Мы получили ваш ответ. Ждём вас! ❤️';
+                    form.reset();
+                } else {
+                    throw new Error('Ошибка отправки');
+                }
+            })
+            .catch(error => {
+                notification.className = 'notification error';
+                notification.textContent = '❌ Произошла ошибка. Пожалуйста, попробуйте ещё раз или напишите нам в WhatsApp.';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить ответ';
+            });
+            */
+
+            // === ВАРИАНТ 2: Простое сохранение в localStorage (для демонстрации) ===
+            // Ответы сохраняются в браузере и видны в консоли (F12 → Console)
+            // Это работает, но только на вашем устройстве
+            
+            const responses = JSON.parse(localStorage.getItem('weddingRSVP') || '[]');
+            responses.push({
+                name: name,
+                guests: guests,
+                message: message,
+                date: new Date().toLocaleString()
+            });
+            localStorage.setItem('weddingRSVP', JSON.stringify(responses));
+
+            console.log('📋 Новый ответ RSVP:');
+            console.table({ Имя: name, Гостей: guests, Сообщение: message || '(пусто)' });
+            console.log('Все ответы сохранены в localStorage');
+
+            notification.className = 'notification success';
+            notification.textContent = '✅ Спасибо, ' + name + '! Мы получили ваш ответ. Ждём вас! ❤️';
+            form.reset();
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Отправить ответ';
+        });
+
+        // === ДОПОЛНИТЕЛЬНО: Инструкция для просмотра ответов ===
+        console.log('🍂 Добро пожаловать на сайт свадьбы!');
+        console.log('📝 Чтобы увидеть ответы гостей:');
+        console.log('1. Нажмите F12 (или правой кнопкой → "Исследовать")');
+        console.log('2. Перейдите на вкладку "Console" (Консоль)');
+        console.log('3. Введите: JSON.parse(localStorage.getItem("weddingRSVP"))');
+        console.log('4. Нажмите Enter — увидите все ответы!');
     </script>
 
 </body>
